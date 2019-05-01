@@ -5,10 +5,10 @@
 **_app.py_** : penghubung _server.py_ dan _engine.py_, sebagai tempat routing.
 
 ## REST API
-> `Top Ratings` : **GET** /<int:user_id>/ratings/top/<int:count>
-> `Movie Ratings` : **GET** /<int:user_id>/ratings/<int:movie_id>
-> `Ratings History` : **GET** /<int:user_id>/history
-> `Movie Recommend` : **GET** /movies/<int:movie_id>/recommend/<int:count>
+> `Top Ratings` : **GET** /<int:user_id>/ratings/top/<int:count> <br>
+> `Movie Ratings` : **GET** /<int:user_id>/ratings/<int:movie_id> <br>
+> `Ratings History` : **GET** /<int:user_id>/history <br>
+> `Movie Recommend` : **GET** /movies/<int:movie_id>/recommend/<int:count> <br>
 
 
 ### Top Ratings 
