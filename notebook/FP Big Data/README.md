@@ -3,17 +3,16 @@
 
 Oleh :
 * Ivanda Zevi Amalia - 05111640000041
-<br>
 
 ## Deskripsi
 Membuat Recommendation Engine dengan menggunakan dataset **_Book-Crossing_** http://www2.informatik.uni-freiburg.de/~cziegler/BX/ <br><br>
 
 ### Struktur Sistem
-**_producer.py_** : berperan sebagai _producer_ pada Kafka, bertugas untuk mengirim pesan yang berisi dataset kepada _consumer.py_ dengan delay tertentu. <br>
-**_consumer.py_** : berperan sebagai _consumer_ pada Kafka, bertugas menerima pesan yang berisi dataset dari _producer.py_ dan kemudian menyimpannya kedalam beberapa batch. <br>
-**_server.py_** : menginisialisasi server web CherryPy yang menjalankan Flask _app.py_ untuk membuat konteks _engine.py_ berbasis Spark. <br>
-**_engine.py_** : inti dari sistem dan menyimpan semua perhitungan yang ada. <br>
-**_app.py_** : penghubung _server.py_ dan _engine.py_, sebagai tempat routing.<br><br>
+* **_producer.py_** : berperan sebagai _producer_ pada Kafka, bertugas untuk mengirim pesan yang berisi dataset kepada _consumer.py_ dengan delay tertentu.
+* **_consumer.py_** : berperan sebagai _consumer_ pada Kafka, bertugas menerima pesan yang berisi dataset dari _producer.py_ dan kemudian menyimpannya kedalam beberapa batch. 
+* **_server.py_** : menginisialisasi server web CherryPy yang menjalankan Flask _app.py_ untuk membuat konteks _engine.py_ berbasis Spark. 
+* **_engine.py_** : inti dari sistem dan menyimpan semua perhitungan yang ada. 
+* **_app.py_** : penghubung _server.py_ dan _engine.py_, sebagai tempat routing.
 
 ### Model yang Digunakan
 * Model 1 : 500.000 data pertama
@@ -33,28 +32,28 @@ Batas pada setiap batch pada Kafka adalah sebanyak 500.000 data tiap file
 
 
 ## URL
-Top Ratings
+**Top Ratings**
 ```sh
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/top/batch0/<int:count> 
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/top/batch1/<int:count>
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/top/batch2/<int:count>
 ```
 
-Book Ratings
+**Book Ratings**
 ```sh
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/batch0/<int:book_id>
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/batch1/<int:book_id>
 **GET** http://<ServerIP>:2308/<int:user_id>/ratings/batch2/<int:book_id>
 ```
 
-Ratings History
+**Ratings History**
 ```sh
 **GET** http://<ServerIP>:2308/<int:user_id>/history/batch0
 **GET** http://<ServerIP>:2308/<int:user_id>/history/batch1
 **GET** http://<ServerIP>:2308/<int:user_id>/history/batch2
 ```
 
-Book Recommend
+**Book Recommend**
 ```sh
 **GET** http://<ServerIP>:2308/books/<int:book_id>/recommend/batch0/<int:count>
 **GET** http://<ServerIP>:2308/books/<int:book_id>/recommend/batch1/<int:count>
@@ -66,17 +65,17 @@ Book Recommend
 ![img1](img/TR-batch0.jpg)
 ![img1](img/TR-batch1.jpg)
 ![img1](img/TR-batch2.jpg)
-
+<br>
 ### Movie Ratings
 ![img2](img/BR-batch0.jpg)
 ![img2](img/BR-batch1.jpg)
 ![img2](img/BR-batch2.jpg)
-
+<br>
 ### Ratings History
 ![img3](img/RH-batch0.jpg)
 ![img3](img/RH-batch1.jpg)
 ![img3](img/RH-batch2.jpg)
-
+<br>
 ### Movie Recommend
 ![img4](img/BRec-batch0.jpg)
 ![img4](img/BRec-batch1.jpg)
