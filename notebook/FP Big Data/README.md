@@ -15,9 +15,9 @@ Membuat Recommendation Engine dengan menggunakan dataset **_Book-Crossing_** htt
 * **_app.py_** : penghubung _server.py_ dan _engine.py_, sebagai tempat routing.
 
 ### Model yang Digunakan
-* Model 1 : 500.000 data pertama
-* Model 2 : 500.000 data kedua
-* Model 3 : 500.000 data ketiga 
+* Model 1 : 400.000 data pertama
+* Model 2 : 400.000 data kedua
+* Model 3 : 400.000 data ketiga 
 
 ### Batch pada Kafka
 Batas pada setiap batch pada Kafka adalah sebanyak 500.000 data tiap file
